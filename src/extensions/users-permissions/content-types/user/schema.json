@@ -1,0 +1,162 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string"
+    },
+    "cpf": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 11,
+      "maxLength": 14
+    },
+    "crm": {
+      "type": "string",
+      "required": true
+    },
+    "data_nascimento": {
+      "type": "date",
+      "required": true
+    },
+    "estado_civil": {
+      "type": "enumeration",
+      "enum": [
+        "Casado",
+        "Solteiro",
+        "Viúvo",
+        "Divorciado"
+      ]
+    },
+    "logradouro": {
+      "type": "string",
+      "required": false
+    },
+    "numero": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "certidao": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "especializacao": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "rqe": {
+      "type": "integer"
+    },
+    "chave_pix": {
+      "type": "string",
+      "required": false
+    },
+    "banco": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::banco.banco"
+    },
+    "agencia": {
+      "type": "string",
+      "required": true
+    },
+    "conta": {
+      "type": "string",
+      "required": true
+    },
+    "contrato_social": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

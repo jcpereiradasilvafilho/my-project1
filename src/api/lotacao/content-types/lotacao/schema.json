@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lotacaos",
+  "info": {
+    "singularName": "lotacao",
+    "pluralName": "lotacaos",
+    "displayName": "lotacao",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hospital": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hospital.hospital"
+    },
+    "especialidade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::especialidade.especialidade"
+    },
+    "nome": {
+      "type": "string",
+      "default": "Hospital / Especialidade"
+    }
+  }
+}

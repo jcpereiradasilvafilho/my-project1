@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bancos",
+  "info": {
+    "singularName": "banco",
+    "pluralName": "bancos",
+    "displayName": "Banco"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo_banco": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

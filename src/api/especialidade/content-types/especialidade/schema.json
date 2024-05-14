@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "especialidades",
+  "info": {
+    "singularName": "especialidade",
+    "pluralName": "especialidades",
+    "displayName": "Especialidade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

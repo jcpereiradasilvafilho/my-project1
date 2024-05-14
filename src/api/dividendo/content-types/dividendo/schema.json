@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dividendos",
+  "info": {
+    "singularName": "dividendo",
+    "pluralName": "dividendos",
+    "displayName": "Dividendo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "empresa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::empresa.empresa"
+    },
+    "hospital": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hospital.hospital"
+    },
+    "lotacao": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lotacao.lotacao"
+    },
+    "numero_nota_fiscal": {
+      "type": "string",
+      "required": true
+    },
+    "data_emissao_nota": {
+      "type": "date",
+      "required": true
+    },
+    "data_inclusao": {
+      "type": "date"
+    },
+    "data_pagamento": {
+      "type": "date"
+    },
+    "status_pagamento": {
+      "type": "enumeration",
+      "enum": [
+        "Realizado",
+        "Pendente"
+      ],
+      "required": true
+    },
+    "valor_bruto": {
+      "type": "float",
+      "required": true
+    },
+    "desconto": {
+      "type": "string",
+      "required": true
+    },
+    "valor_liquido": {
+      "type": "float",
+      "required": true
+    },
+    "banco_emissor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::banco.banco"
+    },
+    "banco_receptor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::banco.banco"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

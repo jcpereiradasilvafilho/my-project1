@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empresas",
+  "info": {
+    "singularName": "empresa",
+    "pluralName": "empresas",
+    "displayName": "Empresa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "default": "he value does not match the regex."
+    },
+    "representante": {
+      "type": "string"
+    },
+    "logradouro": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "string"
+    }
+  }
+}
