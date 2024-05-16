@@ -19,12 +19,11 @@
     },
     "especialidade": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::especialidade.especialidade"
     },
     "nome": {
-      "type": "string",
-      "default": "Hospital / Especialidade"
+      "type": "string"
     }
   }
 }

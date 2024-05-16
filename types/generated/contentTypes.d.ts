@@ -800,7 +800,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     agencia: Attribute.String & Attribute.Required;
     conta: Attribute.String & Attribute.Required;
-    contrato_social: Attribute.Media & Attribute.Required;
+    contrato_social: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -883,8 +883,7 @@ export interface ApiDividendoDividendo extends Schema.CollectionType {
     status_pagamento: Attribute.Enumeration<['Realizado', 'Pendente']> &
       Attribute.Required;
     valor_bruto: Attribute.Float & Attribute.Required;
-    desconto: Attribute.String & Attribute.Required;
-    valor_liquido: Attribute.Float & Attribute.Required;
+    valor_liquido: Attribute.Float;
     banco_emissor: Attribute.Relation<
       'api::dividendo.dividendo',
       'oneToOne',
@@ -900,6 +899,8 @@ export interface ApiDividendoDividendo extends Schema.CollectionType {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    comprovante_pagamento: Attribute.Media;
+    desconto: Attribute.Decimal & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1011,6 +1012,11 @@ export interface ApiHospitalHospital extends Schema.CollectionType {
     telefone: Attribute.String;
     email: Attribute.Email;
     numero: Attribute.String;
+    especialidades: Attribute.Relation<
+      'api::hospital.hospital',
+      'manyToMany',
+      'api::especialidade.especialidade'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1048,10 +1054,10 @@ export interface ApiLotacaoLotacao extends Schema.CollectionType {
     >;
     especialidade: Attribute.Relation<
       'api::lotacao.lotacao',
-      'oneToOne',
+      'oneToMany',
       'api::especialidade.especialidade'
     >;
-    nome: Attribute.String & Attribute.DefaultTo<'Hospital / Especialidade'>;
+    nome: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

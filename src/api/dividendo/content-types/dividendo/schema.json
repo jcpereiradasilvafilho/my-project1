@@ -53,13 +53,9 @@
       "type": "float",
       "required": true
     },
-    "desconto": {
-      "type": "string",
-      "required": true
-    },
     "valor_liquido": {
       "type": "float",
-      "required": true
+      "required": false
     },
     "banco_emissor": {
       "type": "relation",
@@ -75,6 +71,19 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "comprovante_pagamento": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "desconto": {
+      "type": "decimal",
+      "required": true
     }
   }
 }

@@ -41,6 +41,11 @@
     "numero": {
       "type": "string",
       "required": false
+    },
+    "especialidades": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::especialidade.especialidade"
     }
   }
 }
