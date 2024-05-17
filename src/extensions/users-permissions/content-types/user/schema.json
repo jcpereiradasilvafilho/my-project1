@@ -62,8 +62,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.role",
-      "inversedBy": "users",
-      "configurable": false
+      "inversedBy": "users"
     },
     "telefone": {
       "type": "string"
@@ -76,7 +75,8 @@
       "required": true,
       "unique": true,
       "minLength": 11,
-      "maxLength": 14
+      "maxLength": 14,
+      "regex": "^\\d{3}.\\d{3}.\\d{3}-\\d{2}$"
     },
     "crm": {
       "type": "string",
@@ -157,6 +157,12 @@
         "images",
         "files"
       ]
+    },
+    "dividendos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dividendo.dividendo",
+      "mappedBy": "user"
     }
   }
 }

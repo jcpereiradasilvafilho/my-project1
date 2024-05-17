@@ -801,6 +801,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     agencia: Attribute.String & Attribute.Required;
     conta: Attribute.String & Attribute.Required;
     contrato_social: Attribute.Media;
+    dividendos: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::dividendo.dividendo'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -894,9 +899,9 @@ export interface ApiDividendoDividendo extends Schema.CollectionType {
       'oneToOne',
       'api::banco.banco'
     >;
-    users_permissions_user: Attribute.Relation<
+    user: Attribute.Relation<
       'api::dividendo.dividendo',
-      'oneToOne',
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
     comprovante_pagamento: Attribute.Media;
